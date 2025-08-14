@@ -10,4 +10,4 @@ function trailingZeros(num){
     return res;
 } 
 
-console.log(trailsZero(60));
+console.log(trailingZeros(60));
