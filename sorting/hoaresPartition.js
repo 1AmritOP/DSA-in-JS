@@ -39,7 +39,7 @@ function hoaresPartition(arr, l, h) {
 }
 
 
-let a=[5,2,4,1,3,6,7]
+let a=[5,2,9,1,3,6,7]
 
 let idx=hoaresPartition(a,0,a.length-1)
 

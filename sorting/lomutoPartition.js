@@ -7,7 +7,7 @@
  * @param {number} h - Upper bound of the array.
  * @returns {number} - Index of the pivot element.
  */
-function lumutoPartition(arr, l, h) {
+function lomutoPartition(arr, l, h) {
   let pivot = arr[h];
   let i = l - 1;
   for (let j = l; j < h; j++) {
@@ -23,6 +23,6 @@ function lumutoPartition(arr, l, h) {
 
 let a=[7,2,4,1,3,6,5]
 
-let idx=lumutoPartition(a,0,a.length-1)
+let idx=lomutoPartition(a,0,a.length-1)
 
 console.log(a,idx);
