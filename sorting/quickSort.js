@@ -10,6 +10,9 @@ function quickSort(arr, l, h) {
 }
 
 function lomutoPartition(arr, l, h) {
+  // for random pivot
+  // let r =Math.floor(Math.random() * (h - l + 1)) + l;
+  // [arr[r],arr[h]]=[arr[h],arr[r]];
     
   let pivot = arr[h];
   let i = l - 1;
