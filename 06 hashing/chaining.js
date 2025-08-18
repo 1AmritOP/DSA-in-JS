@@ -1,4 +1,4 @@
-// implementing hashing using chaining
+// implementing hashing using open chaining
 
 class Myhash {
   constructor(b) {
