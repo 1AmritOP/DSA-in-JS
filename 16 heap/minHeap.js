@@ -38,6 +38,17 @@ class MinHeap{
             this.minHeapify(smallest);
         }
     }
+    extractMin(){
+        let n=this.arr.length;
+        if (n === 0) return null;
+
+        let res=this.arr[0];
+        this.arr[0]=this.arr[n-1];
+        this.arr.pop();
+        this.minHeapify(0);
+
+        return res;
+    }
 }
 
-let mh= new MinHeap([10,6,32,565,34,7]);
+let mh= new MinHeap([3,5,7,10,12,8]);
