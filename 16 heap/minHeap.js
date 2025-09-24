@@ -49,6 +49,21 @@ class MinHeap{
 
         return res;
     }
+    decreaseKey(i,x){
+        let arr=this.arr;
+        arr[i]=x;
+        while (i>0 && arr[this.parent(i)] > arr[i]) {
+            let p=this.parent(i);
+            [arr[p],arr[i]]=[arr[i],arr[p]];
+            i=this.parent(i);
+        }
+    }
+    deleteKey(i){
+        let arr=this.arr;
+        if(i>=arr.length) return;
+        this.decreaseKey(i,arr[0]-1);
+        this.extractMin();
+    }
 }
 
 let mh= new MinHeap([3,5,7,10,12,8]);
