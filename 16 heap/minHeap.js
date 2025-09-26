@@ -66,4 +66,103 @@ class MinHeap{
     }
 }
 
+// MinHeap class without using dynamic array
+class MinHeap {
+    constructor(cap) {
+        this.heap_size = 0;
+        this.capacity = cap;
+        this.harr = new Array(cap);
+    }
+
+    parent(i) { return Math.floor((i - 1) / 2); }
+
+    left(i) { return (2 * i + 1); }
+
+    right(i) { return (2 * i + 2); }
+
+    /**
+     * Extracts the minimum element (root) from the heap
+     * @return {number}
+     */
+    extractMin() {
+        if (this.heap_size <= 0) return Number.POSITIVE_INFINITY; // empty heap
+        if (this.heap_size === 1) {
+            this.heap_size--;
+            return this.harr[0];
+        }
+
+        // Store the minimum value, and remove it from heap
+        let root = this.harr[0];
+        this.harr[0] = this.harr[this.heap_size - 1];
+        this.heap_size--;
+        this.MinHeapify(0);
+
+        return root;
+    }
+
+    /**
+     * Inserts a new key 'k' into the heap
+     * @param {number} k
+     */
+    insertKey(k) {
+        if (this.heap_size === this.capacity) {
+            console.log("Overflow: Could not insertKey");
+            return;
+        }
+
+        // First insert the new key at the end
+        let i = this.heap_size;
+        this.harr[i] = k;
+        this.heap_size++;
+
+        // Fix the min heap property if it is violated
+        while (i !== 0 && this.harr[this.parent(i)] > this.harr[i]) {
+            let temp = this.harr[i];
+            this.harr[i] = this.harr[this.parent(i)];
+            this.harr[this.parent(i)] = temp;
+            i = this.parent(i);
+        }
+    }
+
+    /**
+     * Deletes key at index i
+     * @param {number} i
+     */
+    deleteKey(i) {
+        if (i < 0 || i >= this.heap_size) {
+            console.log("Invalid index");
+            return;
+        }
+
+        // Decrease the value to -∞, then extract min
+        this.decreaseKey(i, Number.NEGATIVE_INFINITY);
+        this.extractMin();
+    }
+
+    // Decrease key operation, helps in deleting the element
+    decreaseKey(i, new_val) {
+        this.harr[i] = new_val;
+        while (i !== 0 && this.harr[this.parent(i)] > this.harr[i]) {
+            let temp = this.harr[i];
+            this.harr[i] = this.harr[this.parent(i)];
+            this.harr[this.parent(i)] = temp;
+            i = this.parent(i);
+        }
+    }
+
+    MinHeapify(i) {
+        let l = this.left(i);
+        let r = this.right(i);
+        let smallest = i;
+        if (l < this.heap_size && this.harr[l] < this.harr[i]) smallest = l;
+        if (r < this.heap_size && this.harr[r] < this.harr[smallest]) smallest = r;
+        if (smallest != i) {
+            let temp = this.harr[i];
+            this.harr[i] = this.harr[smallest];
+            this.harr[smallest] = temp;
+            this.MinHeapify(smallest);
+        }
+    }
+}
+
 let mh= new MinHeap([3,5,7,10,12,8]);
