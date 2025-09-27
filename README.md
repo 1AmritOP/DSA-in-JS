@@ -6,7 +6,7 @@ I’m following the *GeeksforGeeks Self-Paced Course (Data Structures & Algorith
 ---
 
 ## 📊 Progress  
-- ✅ 61 Problems Solved  
+- ✅ 86 Problems Solved  
 - 📚 Topics Covered:  
   - Mathematics  
   - Recursion  
@@ -14,7 +14,15 @@ I’m following the *GeeksforGeeks Self-Paced Course (Data Structures & Algorith
   - Searching  
   - Sorting  
   - Hashing  
-  - Linked List (In Progress 🚀)  
+  - Linked List
+  - Doubly Linked List
+  - Circular Linked List
+  - Stack
+  - Queue
+  - Deque
+  - Tree
+  - String
+  - Heap
 
 ---
 
@@ -27,13 +35,20 @@ Each folder represents a DSA topic with related problems:
 - `05 sorting` → Sorting algorithms & practice  
 - `06 hashing` → Hashing-based problems  
 - `07 linkedList` → Linked List problems  
+- `08 doublyLinkedList` → Doubly Linked List problems
+- `09 circularLinkedList` → Circular Linked List problems
+- `10 stack` → Stack problems
+- `11 queue` → Queue problems
+- `12 deque` → Deque problems
+- `13 tree` → Tree problems
+- `15 string` → String problems
+- `16 heap` → Heap problems
 
 ---
 
 ## 🚀 Goal  
 - Complete **Basic DS** part of the course  
-- Move to **Advanced DS & Algorithms**  
-- Solve 500+ problems for strong foundation in DSA  
+- Move to **Advanced DS & Algorithms** - Solve 500+ problems for strong foundation in DSA  
 
 ---
 
