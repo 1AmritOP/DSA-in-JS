@@ -3,7 +3,7 @@
 // ex-> [1,2,3,4,5,6,7] => k=3 => [5,6,7,1,2,3,4]
 
 // using extra space
-function rotateArrayByKTimes(arr, k) {
+function rotateArrayByKTimesRight(arr, k) {
     const n = arr.length;
     const result = new Array(n);
 
@@ -16,8 +16,8 @@ function rotateArrayByKTimes(arr, k) {
 
 
 // without using extra space
-function rotateKTimes(arr, k) {
-    n = arr.length
+function rotateArrayByKTimesRight(arr, k) {
+    let n = arr.length;
     k = k % n;
     reverseArray(arr, 0, n-k - 1);
     reverseArray(arr, n-k, n - 1);
@@ -33,6 +33,6 @@ function reverseArray(arr, start, end) {
 }
 
 
-let arr=[1,2,3,4,5,6,7];
-rotateKTimes(arr,3);
+let arr=[1,2,3,4,5];
+rotateArrayByKTimesRight(arr,2);
 console.log(arr);
